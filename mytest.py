@@ -1,8 +1,6 @@
 import sys
 import numpy as np
 from abess import *
-import pandas as pd
-from scipy.sparse import coo_matrix
 
 
 np.random.seed(2)
