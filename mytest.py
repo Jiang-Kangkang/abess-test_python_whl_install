@@ -1,7 +1,6 @@
 import sys
 import numpy as np
 from abess import *
-from utilities import *
 import pandas as pd
 from scipy.sparse import coo_matrix
 
@@ -30,7 +29,6 @@ model1.fit(data.x, data.y)
 
 # predict
 y = model1.predict(data.x)
-assert_nan(y)
 
 # score
 score = model1.score(data.x, data.y)
