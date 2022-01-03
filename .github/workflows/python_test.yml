@@ -1,0 +1,31 @@
+name: Python Build
+
+on:
+  push:
+    paths:
+    - 'python/*'
+  pull_request:
+    paths:
+    - 'python/*'
+  workflow_dispatch:
+
+jobs:
+  Install-Test:
+    name: Installation test for python
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        python-version: [3.9]
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Python
+        uses: actions/setup-python@master
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install abess
+        run: |
+          python --version
+          pip install abess
+          python mytest.py
+        
