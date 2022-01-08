@@ -40,7 +40,7 @@ jobs:
           python --version
           cd ./python
           cd ./src
-          swig -python -c++ abess.i
+          swig -python -c++ pywrap.i
           python --version
           cp cabess.py ../abess
           cd ..
