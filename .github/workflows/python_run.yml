@@ -31,6 +31,9 @@ jobs:
           choco install swig mingw git
       - name: Install abess
         run: |
+          gcc
+          swig
+          gendef
           python --version
           cd ./python
           python setup.py install
