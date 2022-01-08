@@ -43,6 +43,7 @@ jobs:
           swig -python -c++ abess.i
           python --version
           cp cabess.py ../abess
+          cd ..
           python setup.py install
           cd ..
           python mytest.py
