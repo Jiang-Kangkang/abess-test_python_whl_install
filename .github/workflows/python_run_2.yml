@@ -28,19 +28,13 @@ jobs:
       - name: Install dependencies for windows
         if: matrix.os == 'windows-latest'
         run: |
-          pip install setuptools wheel twine
-          pip install numpy sklearn scipy
           choco install swig mingw git
       - name: Install abess
         run: |
-          # pip
-          # cd ./python
-          # bash copy_src.sh
-          # ls
-          # python setup.py install
-          # ls
-          # cd ..
-          # python mytest.py
-          python setup.py bdist_wheel
-          pip install abess-0.4.0-cp38-cp38-win_amd64.whl
+          cd ./python
+          bash copy_src.sh
+          ls
+          python setup.py install
+          ls
+          cd ..
           python mytest.py
