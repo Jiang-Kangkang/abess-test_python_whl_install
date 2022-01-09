@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        python-version: [3.7]
+        python-version: [3.8]
     steps:
       - uses: actions/checkout@master
       - name: Setup Python
@@ -33,7 +33,8 @@ jobs:
         run: |
           pip install scipy==1.4.1
           cd ./python
-          bash copy_src.sh
+          swig -python -c++ src/pywrap.i
+          cp cabess.py abess
           ls
           python setup.py install
           ls
