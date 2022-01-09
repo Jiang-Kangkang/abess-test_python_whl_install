@@ -34,7 +34,7 @@ jobs:
           pip install scipy==1.4.1
           cd ./python
           swig -python -c++ src/pywrap.i
-          cp cabess.py abess
+          cp src/cabess.py abess
           ls
           python setup.py install
           ls
