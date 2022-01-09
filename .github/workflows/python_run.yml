@@ -39,4 +39,5 @@ jobs:
           python setup.py install
           ls
           cd ..
+          ls
           python mytest.py
