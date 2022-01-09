@@ -33,14 +33,10 @@ jobs:
           choco install swig mingw git
       - name: Install abess
         run: |
-          # pip
-          # cd ./python
-          # bash copy_src.sh
-          # ls
-          # python setup.py install
-          # ls
-          # cd ..
-          # python mytest.py
+          cd ./python
           python setup.py bdist_wheel
+          cd dist
           pip install abess-0.4.0-cp38-cp38-win_amd64.whl
+          cd ..
+          cd ..
           python mytest.py
