@@ -35,5 +35,6 @@ jobs:
           bash copy_src.sh
           ls
           python setup.py install
+          ls
           cd ..
           python mytest.py
